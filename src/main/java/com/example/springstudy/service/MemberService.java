@@ -3,6 +3,8 @@ package com.example.springstudy.service;
 import com.example.springstudy.domain.Member;
 import com.example.springstudy.repository.MemberRepository;
 import com.example.springstudy.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,8 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     // Dependency Injection
+    // 구현체(MemoryMemberRepository) 주입
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

@@ -2,10 +2,12 @@ package com.example.springstudy.repository;
 
 
 import com.example.springstudy.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     // 동시성 문제를 해결하기 위해서는 ConcurrentHashMap 사용 권장
@@ -13,7 +15,7 @@ public class MemoryMemberRepository implements MemberRepository {
     // 동시성 문제 Autum long ?
     private static long sequence = 0L;
 
-    @Override
+
     public Member save(Member member) {
         member.setId(++sequence);
         store.put(member.getId(), member);

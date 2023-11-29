@@ -21,7 +21,6 @@ class MemberServiceIntegrationTest {
 
     // Test 시는 생성자 Injection 보다는 필드 Injection을 추천 한다. (변경사항 많지 않음)
     @Autowired MemberService memberService;
-    //@Qualifier("jdbcMemberRepository")
     @Autowired MemberRepository memberRepository ;
 
 
